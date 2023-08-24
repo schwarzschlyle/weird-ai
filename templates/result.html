@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Classifier - Result</title>
+</head>
+<body>
+    <h1>Image Classification Result</h1>
+    <img src="{{ 'data:image/jpeg;base64,' + image_base64 }}" alt="Uploaded Image">
+    <h2>Predictions:</h2>
+    <ul>
+        {% for pred in predictions %}
+            <li>{{ pred[1] }} - {{ pred[2] }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
