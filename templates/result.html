@@ -1,16 +1,90 @@
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+<!--    <title>Image Classifier - Result</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <h1>Image Classification Result</h1>-->
+<!--    <img src="{{ 'data:image/jpeg;base64,' + image_base64 }}" alt="Uploaded Image">-->
+<!--    <h2>Predictions:</h2>-->
+<!--    <ul>-->
+<!--        {% for pred in predictions %}-->
+<!--            <li>{{ pred[1] }} - {{ pred[2] }}</li>-->
+<!--        {% endfor %}-->
+<!--    </ul>-->
+<!--</body>-->
+<!--</html>-->
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
     <title>Image Classifier - Result</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .result-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 0;
+            color: #333;
+            font-size: 28px;
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 5px;
+            margin-top: 15px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #555;
+            font-size: 20px;
+            margin-top: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 10px;
+        }
+
+        li {
+            margin-bottom: 5px;
+            padding: 5px;
+            background-color: #f8f8f8;
+            border-radius: 5px;
+            box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+        }
+    </style>
 </head>
 <body>
-    <h1>Image Classification Result</h1>
-    <img src="{{ 'data:image/jpeg;base64,' + image_base64 }}" alt="Uploaded Image">
-    <h2>Predictions:</h2>
-    <ul>
-        {% for pred in predictions %}
-            <li>{{ pred[1] }} - {{ pred[2] }}</li>
-        {% endfor %}
-    </ul>
+    <div class="result-container">
+        <h1>Image Classification Result</h1>
+        <img src="{{ 'data:image/jpeg;base64,' + image_base64 }}" alt="Uploaded Image">
+        <h2>Predictions:</h2>
+        <ul>
+            {% for pred in predictions %}
+                <li>{{ pred[1] }} - {{ pred[2] }}</li>
+            {% endfor %}
+        </ul>
+    </div>
 </body>
 </html>
